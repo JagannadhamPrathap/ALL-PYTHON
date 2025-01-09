@@ -87,27 +87,55 @@
 # ch1.IQ()
 # ch1.Appearance()
 # ch1.OwnThoughts()
-class Phone:
-    name = ''
-    def __init__(self,name):
-        self.name = name
-    def communication(self):
-        print(f"{self.name} is ringing")
-    def game(self):
-        print("Playing video games")
-    def media(self):
-        print("All audio,video and pics")
-class Phone1(Phone):
-    def __init__(self, name):
-        super().__init__(name)
-    def software(self):
-        print("Best android")
-class Phone2(Phone):
-    def __init__(self, name):
-        super().__init__(name)
-    def software(self):
-        print("iOS")
-i1 = Phone1("iphone")
-s1 = Phone2('Samsung')
-i1.communication()
-s1.communication()
+# class Phone:
+#     name = ''
+#     def __init__(self,name):
+#         self.name = name
+#     def communication(self):
+#         print(f"{self.name} is ringing")
+#     def game(self):
+#         print("Playing video games")
+#     def media(self):
+#         print("All audio,video and pics")
+# class Phone1(Phone):
+#     def __init__(self, name):
+#         super().__init__(name)
+#     def software(self):
+#         print("Best android")
+# class Phone2(Phone):
+#     def __init__(self, name):
+#         super().__init__(name)
+#     def software(self):
+#         print("iOS")
+# i1 = Phone1("iphone")
+# s1 = Phone2('Samsung')
+# i1.communication()
+# s1.communication()
+# spiral matrix
+n = int(input())
+matrix = [[0]*n for _ in range(n)]
+num=1
+top,bottom,left,right = 0,n-1,0,n-1
+while top<=bottom and left<=right:
+    for i in range(left,right+1):
+        matrix[top][i] = num
+        num+=1
+    top+=1
+    for i in range(top,bottom+1):
+        matrix[i][right] = num
+        num+=1
+    right-=1
+    if top<=bottom:
+        for i in range(right,left-1,-1):
+            matrix[bottom][i] = num
+            num+=1
+        bottom-=1
+    if left<=right:
+        for i in range(bottom,top-1,-1):
+            matrix[i][left] = num
+            num+=1
+        left+=1
+for row in matrix:
+    for i in row:
+        print(i,end="\t")
+    print()

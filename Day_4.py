@@ -65,18 +65,6 @@ class Day_4:
             if i not in res:
                 res.append(i)
         print(res)
-    def secMax_arr(self):
-        arr = list(map(int,input().split()))
-        max1 = 1
-        max2=arr[0]
-        for i in arr:
-            if i>max1:
-                max1 = i
-        print(max1)
-        for i in arr:
-            if i>max1:
-                max2 = i
-        print(max2)
     def pat5(self):
         for i in range(self.n):
             for j in range(i):
@@ -117,15 +105,14 @@ class Day_4:
 # Day_4().escap()
 # Day_4().pat2()
 # print("Square:")
-# Day_4().pat3()/
+# Day_4().pat3()
 # Day_4().pat4()
 # Day_4().enum()
 #Day_4().rev_arr()
 # Day_4().max_minarr()
 # Day_4().check_sortarr()
 # Day_4().dupl_arr()
-# Day_4().secMax_arr()
 # Day_4().pat5()
 # Day_4().hcf()
 # Day_4().lcm()
-Day_4().Arm()
+# Day_4().Arm()
